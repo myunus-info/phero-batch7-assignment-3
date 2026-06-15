@@ -34,3 +34,11 @@ CREATE TABLE Bookings (
   	FOREIGN KEY (match_id) REFERENCES Matches(match_id)
 );
 
+
+-- Answer to Question No. 1
+SELECT *
+FROM matches
+WHERE tournament_category = 'Champions League'
+AND match_status = 'Available';
+
+
