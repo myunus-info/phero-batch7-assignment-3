@@ -18,7 +18,7 @@ Defines and creates the database structure:
 - Creates `Bookings` linking users to matches with seat number, payment status, and total cost
 - Enforces primary keys, foreign keys, and `CHECK` constraints on prices and enum-like values
 
-### `Queries.sql`
+### `queries.sql`
 
 Contains seven SQL queries that practice core database operations:
 
@@ -34,34 +34,34 @@ Contains seven SQL queries that practice core database operations:
 
 ### `Users`
 
-| Column         | Description                                      |
-| -------------- | ------------------------------------------------ |
-| `user_id`      | Primary key                                      |
-| `full_name`    | User's full name                                 |
-| `email`        | Unique email address                             |
-| `role`         | `Ticket Manager` or `Football Fan`               |
-| `phone_number` | Optional contact number                          |
+| Column         | Description                        |
+| -------------- | ---------------------------------- |
+| `user_id`      | Primary key                        |
+| `full_name`    | User's full name                   |
+| `email`        | Unique email address               |
+| `role`         | `Ticket Manager` or `Football Fan` |
+| `phone_number` | Optional contact number            |
 
 ### `Matches`
 
-| Column                | Description                                                |
-| --------------------- | ---------------------------------------------------------- |
-| `match_id`            | Primary key                                                |
-| `fixture`             | Match description (e.g., team names)                         |
-| `tournament_category` | Tournament name (e.g., Champions League)                   |
-| `base_ticket_price`   | Base price per ticket (non-negative)                       |
-| `match_status`        | `Available`, `Selling Fast`, `Sold Out`, or `Postponed`    |
+| Column                | Description                                             |
+| --------------------- | ------------------------------------------------------- |
+| `match_id`            | Primary key                                             |
+| `fixture`             | Match description (e.g., team names)                    |
+| `tournament_category` | Tournament name (e.g., Champions League)                |
+| `base_ticket_price`   | Base price per ticket (non-negative)                    |
+| `match_status`        | `Available`, `Selling Fast`, `Sold Out`, or `Postponed` |
 
 ### `Bookings`
 
-| Column           | Description                                              |
-| ---------------- | -------------------------------------------------------- |
-| `booking_id`     | Primary key                                              |
-| `user_id`        | Foreign key to `Users`                                   |
-| `match_id`       | Foreign key to `Matches`                                 |
-| `seat_number`    | Optional seat identifier                                 |
-| `payment_status` | `Pending`, `Confirmed`, `Cancelled`, or `Refunded`       |
-| `total_cost`     | Total booking cost (non-negative)                        |
+| Column           | Description                                        |
+| ---------------- | -------------------------------------------------- |
+| `booking_id`     | Primary key                                        |
+| `user_id`        | Foreign key to `Users`                             |
+| `match_id`       | Foreign key to `Matches`                           |
+| `seat_number`    | Optional seat identifier                           |
+| `payment_status` | `Pending`, `Confirmed`, `Cancelled`, or `Refunded` |
+| `total_cost`     | Total booking cost (non-negative)                  |
 
 ## Setup
 
@@ -74,9 +74,9 @@ Contains seven SQL queries that practice core database operations:
    ```bash
    psql -d football_booking -f schema.sql
    ```
-4. Insert sample data as needed, then run individual queries from `Queries.sql`:
+4. Insert sample data as needed, then run individual queries from `queries.sql`:
    ```bash
-   psql -d football_booking -f Queries.sql
+   psql -d football_booking -f queries.sql
    ```
 
 ## Technologies Used
