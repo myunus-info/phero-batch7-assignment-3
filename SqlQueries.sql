@@ -8,7 +8,7 @@ CREATE TABLE Users (
     email VARCHAR(100) NOT NULL UNIQUE,
     role VARCHAR(20) NOT NULL 
          CHECK(ROLE IN ('Ticket Manager', 'Football Fan')),
-    phone_number VARCHAR(20),
+    phone_number VARCHAR(20)
 );
 
 CREATE TABLE Matches (
@@ -18,7 +18,7 @@ CREATE TABLE Matches (
     base_ticket_price DECIMAL(10, 2) NOT NULL 
         CHECK (base_ticket_price >= 0),
     match_status VARCHAR(20) NOT NULL 
-        CHECK (match_status IN ('Available', 'Selling Fast', 'Sold Out', 'Postponed')),
+        CHECK (match_status IN ('Available', 'Selling Fast', 'Sold Out', 'Postponed'))
 );
 
 CREATE TABLE Bookings (
